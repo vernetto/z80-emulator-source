@@ -1,0 +1,676 @@
+/* App.css */
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Main container */
+.app-container {
+  flex: 1;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tab navigation */
+.app-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #3498db;
+}
+
+.tab-button.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+/* Content area */
+.app-content {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  min-height: 500px;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Register Editor styles */
+.register-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.register-section {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.register-section h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.register-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.register-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.register-label {
+  font-weight: 600;
+  width: 40px;
+  text-align: right;
+}
+
+.register-input {
+  width: 50px;
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+  text-align: center;
+}
+
+.register-value {
+  width: 50px;
+  padding: 0.25rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+  text-align: center;
+}
+
+.flags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.flag-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.register-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.register-actions button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-actions button:hover {
+  background-color: #2980b9;
+}
+
+/* Memory Editor styles */
+.memory-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.memory-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.address-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-navigation input {
+  width: 80px;
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.memory-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.memory-actions button, .file-input-label {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.memory-actions button:hover, .file-input-label:hover {
+  background-color: #2980b9;
+}
+
+.rows-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rows-control select {
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.memory-header {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.memory-address-header {
+  width: 80px;
+}
+
+.memory-hex-header {
+  flex: 1;
+  display: flex;
+}
+
+.memory-cell-header {
+  width: 30px;
+  text-align: center;
+}
+
+.memory-ascii-header {
+  width: 200px;
+}
+
+.memory-content {
+  font-family: monospace;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.memory-row {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+}
+
+.memory-row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.memory-address {
+  width: 80px;
+  color: #666;
+}
+
+.memory-hex {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.memory-cell {
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.memory-cell.selected {
+  background-color: #e3f2fd;
+}
+
+.memory-input {
+  width: 25px;
+  border: none;
+  background-color: #e3f2fd;
+  text-align: center;
+  font-family: monospace;
+}
+
+.memory-ascii {
+  width: 200px;
+  display: flex;
+}
+
+.ascii-cell {
+  width: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ascii-cell.selected {
+  background-color: #e3f2fd;
+}
+
+/* Assembly Editor styles */
+.asm-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.editor-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.address-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-control input {
+  width: 80px;
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-actions button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.editor-actions button:hover {
+  background-color: #2980b9;
+}
+
+.editor-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.code-editor {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  border: none;
+  resize: vertical;
+}
+
+.error-list {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+}
+
+.error-list h3 {
+  color: #c62828;
+  margin-bottom: 0.5rem;
+}
+
+.error-item {
+  color: #c62828;
+  margin-left: 1.5rem;
+}
+
+.assembled-program {
+  margin-top: 1rem;
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: monospace;
+}
+
+.program-table th, .program-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.program-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+/* Debugger styles */
+.debugger {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.debug-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.execution-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.execution-controls button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.execution-controls button:hover {
+  background-color: #2980b9;
+}
+
+.execution-controls button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breakpoint-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.breakpoint-controls button {
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.breakpoint-controls button:hover {
+  background-color: #c0392b;
+}
+
+.debug-status {
+  display: flex;
+  gap: 2rem;
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-label {
+  font-weight: 600;
+}
+
+.status-value {
+  font-family: monospace;
+}
+
+.debug-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.program-listing, .execution-history {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.program-listing h3, .execution-history h3 {
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+
+.listing-header, .history-header {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.breakpoint-header {
+  width: 40px;
+}
+
+.address-header {
+  width: 80px;
+}
+
+.bytes-header {
+  width: 120px;
+}
+
+.instruction-header {
+  flex: 1;
+}
+
+.history-address-header {
+  width: 80px;
+}
+
+.history-instruction-header {
+  flex: 1;
+}
+
+.listing-content, .history-content {
+  height: 300px;
+  overflow-y: auto;
+  font-family: monospace;
+}
+
+.program-line {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.program-line.current-line {
+  background-color: #e3f2fd;
+}
+
+.breakpoint-marker {
+  width: 40px;
+  cursor: pointer;
+  color: #bbb;
+  text-align: center;
+}
+
+.breakpoint-marker.active {
+  color: #e74c3c;
+}
+
+.program-address {
+  width: 80px;
+  color: #666;
+}
+
+.program-bytes {
+  width: 120px;
+  color: #666;
+}
+
+.program-instruction {
+  flex: 1;
+}
+
+.history-item {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.history-address {
+  width: 80px;
+  color: #666;
+}
+
+.history-instruction {
+  flex: 1;
+}
+
+.history-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.history-controls input {
+  width: 80px;
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.history-controls button {
+  padding: 0.25rem 0.5rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.history-controls button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .debug-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .memory-controls, .editor-controls, .debug-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .memory-actions, .editor-actions, .execution-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .debug-status {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
